@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cat GIF</title>
+</head>
+<body>
+    <h1>Here is a random Cat GIF!</h1>
+    
+    <!-- Debugging: Display the GIF path -->
+    <p>GIF Path: {{ gif_path }}</p>  <!-- This will show the path received from Flask -->
+    
+    <!-- Display the GIF using the path -->
+    {% if gif_path %}
+        <img src="{{ url_for('static', filename=gif_path) }}" alt="Random Cat GIF">
+    {% else %}
+        <p>No GIF found!</p> <!-- In case no GIF path was received -->
+    {% endif %}
+</body>
+</html>
